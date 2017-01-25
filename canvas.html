@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas</title>
+  </head>
+  <body onload="draw();">
+    <h1>CANVAS</h1>
+    <canvas id="canvas" width="800" height="500" style="border: black 2px solid"></canvas>
+    <script>
+    'use strict'
+
+    var windowS = {
+      renderStatistics: function() {
+          var canvas = document.querySelector('canvas');
+          var ctx = canvas.getContext('2d');
+
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+          ctx.fillRect(110, 20, 420, 270);
+
+          ctx.fillStyle = 'white';
+          ctx.fillRect(100, 10, 420, 270);
+      }
+    };
+
+    function draw() {
+      windowS.renderStatistics();
+    };
+
+    /*function draw() {
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+      ctx.fillRect(110, 20, 420, 270);
+
+      ctx.fillStyle = 'green';
+      ctx.fillRect(100, 10, 420, 270);
+    }*/
+
+    /*var table = {
+      type: 'desk',
+      legsCount: 4,
+      showMes: function() {
+          alert('Это стол:\n' + '\tтип: ' + table.type + '\n' + '\tног: ' + table.legsCount);
+      }
+    };
+
+    table.showMes();*/
+
+    </script>
+  </body>
+</html>
