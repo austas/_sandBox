@@ -7,7 +7,16 @@
   <body>
     <h1>Hello!</h1>
     <script>
+    var demoObject = {
+      'son1': 'Абырвалг',
+      'son2': 'Телеграф',
+      'son3': 'Телфон'
+    };
 
+    for (var i = 1; i <= 3 ; i++) {
+      var sonName = demoObject['son' + i];
+      alert('Сын ' + i + ': ' + sonName);
+    }
     </script>
   </body>
 </html>
