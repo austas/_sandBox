@@ -3,10 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>canvas</title>
-  </head>
-  <body onload="draw();">
-    <h1>CANVAS</h1>
-    <canvas id="canvas" width="800" height="500" style="border: black 2px solid"></canvas>
     <script>
     'use strict'
 
@@ -15,11 +11,70 @@
           var canvas = document.querySelector('canvas');
           var ctx = canvas.getContext('2d');
 
+          var names = ['Вы', 'Кекс', 'Игорь', 'Катя']
+          var times = ['27.12', '40.08', '34.11', '12.47']
+
           ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
           ctx.fillRect(110, 20, 420, 270);
 
           ctx.fillStyle = 'white';
+          ctx.strokeRect(100, 10, 420, 270);
           ctx.fillRect(100, 10, 420, 270);
+
+          ctx.fillStyle = 'black';
+          ctx.font = '16px PT Mono';
+          ctx.textBaseline = 'hanging';
+          ctx.fillText('Ура вы победили!', 120, 30);
+          ctx.fillText('Список результатов:', 120, 50);
+
+          function drawNames() {
+            var x = 155;
+            ctx.fillText(names[0], x, 240);
+
+            ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+            var widthY = times[0] / 100 * 150;
+            var heightY = 230 - widthY;
+            ctx.fillRect(155, heightY, 40, widthY);
+
+            for (var i = 1; i < names.length; i++) {
+              var x = x + 90;
+              var colorI = i / names.length;
+
+              ctx.fillStyle = ['rgba(0, 0, 255,' + colorI + ')'];
+              var widthY = times[i] / 100 * 150;
+              var heightY = 230 - widthY;
+              ctx.fillRect(x, heightY, 40, widthY);
+
+              ctx.fillStyle = 'black';
+              ctx.fillText(names[i], x, 240);
+              ctx.fillText(parseInt(times[i], 10), x, heightY - 20);
+            }
+          }
+
+          drawNames();
+
+          /*
+          ctx.fillText(names[1], 245, 240);
+          ctx.fillText(names[2], 335, 240);
+          ctx.fillText(names[3], 425, 240);*/
+
+          /*
+
+          ctx.fillStyle = 'blue';
+          var widthY = 40/100 * 150;
+          var heightY = 230 - widthY;
+          ctx.fillRect(245, heightY, 40, widthY);
+
+          ctx.fillStyle = 'green';
+          var widthY = 31/100 * 150;
+          var heightY = 230 - widthY;
+          ctx.fillRect(335, heightY, 40, widthY);
+
+          ctx.fillStyle = 'purple';
+          var widthY = 15/100 * 150;
+          var heightY = 230 - widthY;
+          ctx.fillRect(425, heightY, 40, widthY);  */
+
       }
     };
 
@@ -27,7 +82,16 @@
       windowS.renderStatistics();
     };
 
-    /*function draw() {
+
+  </script>
+  </head>
+  <body onload="draw();">
+    <h1>CANVAS</h1>
+    <canvas id="canvas" width="800" height="500" style="border: black 2px solid"></canvas>
+
+<script>
+
+    /* function draw() {
       var canvas = document.querySelector('canvas');
       var ctx = canvas.getContext('2d');
 
@@ -47,7 +111,7 @@
     };
 
     table.showMes();*/
+</script>
 
-    </script>
   </body>
 </html>

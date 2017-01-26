@@ -7,7 +7,20 @@
   <body>
     <h1>Hello!</h1>
     <script>
-    var demoObject = {
+    var NAMES = ['Кекс', 'Катя', 'Игорь'];
+
+    function getName() {
+
+    }
+
+    function showMes() {
+      var x = (Math.random() * 5) * 50
+      alert('Привет ' + NAMES[1] + '! Цвет номер - ' + x );
+    }
+
+    showMes();
+
+    /*var demoObject = {
       'son1': 'Абырвалг',
       'son2': 'Телеграф',
       'son3': 'Телфон'
@@ -16,7 +29,8 @@
     for (var i = 1; i <= 3 ; i++) {
       var sonName = demoObject['son' + i];
       alert('Сын ' + i + ': ' + sonName);
-    }
+    }*/
+
     </script>
   </body>
 </html>
