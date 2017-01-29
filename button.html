@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Click me!</title>
+  </head>
+  <body>
+
+    <button id="clickable">Click me!</button>
+    <script>
+      'use strict';
+
+      var button = document.querySelector('#clickable');
+      function buttonClickHandler() {
+        document.body.innerHTML += '<br>Hello!';
+      }
+
+      button.addEventListener('click', buttonClickHandler);
+
+      fireball.addEventListener('click', function () {
+        var fireballColor = 'url(\'../img/fireball/' + fireballList[0] + '\')';
+        fireball.style.background = fireballColor;
+      });
+
+    </script>
+
+  </body>
+</html>

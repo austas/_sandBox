@@ -9,13 +9,17 @@
     <script>
     var NAMES = ['Кекс', 'Катя', 'Игорь'];
 
-    function getName() {
-
+    function getRandom() {
+      var x = 'rgb(0, ';
+      for (var i = 0; i < 2; i++) {
+        x += parseInt((Math.random() * 5) * 50) + ', ';
+      }
+      return x;
     }
 
     function showMes() {
-      var x = (Math.random() * 5) * 50
-      alert('Привет ' + NAMES[1] + '! Цвет номер - ' + x );
+      var x =
+      alert('Привет ' + NAMES[1] + '! Цвет номер - ' + getRandom());
     }
 
     showMes();
